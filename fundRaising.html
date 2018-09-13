@@ -447,12 +447,15 @@
                     </div>
                 </div>
             </div>
+            <h3 class="title">Budget Allocations</h3>
         </div>
-        <button onClick='clickFunction()'>ClickMe</button>
-        <div class='section section-team text-center'>
-            <canvas id ="fundPieChart">
-                
-            </canvas>
+        
+        <div class='container'>
+            <div class="budget col-md-12">
+                <canvas id ="fundPieChart">
+                    
+                </canvas>
+            </div>
         </div> 
         <!--Supporting Partners-->
         <div class="section-team text-center">
@@ -562,12 +565,12 @@
         var fundPieChart = new Chart(fundPieChartCanvas, {
             type: 'pie',
             data: {
-                labels: ["Red", "Green", "Yellow", "Grey", "Dark Grey"],
+                labels: ["Food", "Goodie Bags", "Materials", "Marketing", "Prizes & Logistics", "Presentation Materials","Miscellaneous","Photo Booth & Photography"],
                 datasets: [
                     {
-                        data: [300, 50, 100, 40, 120],
-                        backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C", "#949FB1", "#4D5360"],
-                        hoverBackgroundColor: ["#FF5A5E", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774"]
+                        data: [22, 2, 5, 6, 2, 2, 3, 2],
+                        backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C", "#949FB1", "#4D5360", "#F7464A", "#46BFBD", "#FDB45C"],
+                        hoverBackgroundColor: ["#FF5A5E", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774","#FF5A5E", "#5AD3D1", "#FFC870" ]
                     }
                 ]
             },
