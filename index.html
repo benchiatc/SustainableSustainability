@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- import this at the head script -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-serialize-object/2.5.0/jquery.serialize-object.min.js"></script>
 
 <head>
     <meta charset="utf-8" />
@@ -84,7 +87,24 @@
 
                     <h5 class="description" style="color: gray"><br>The <b>Sustainable Sustainability </b> is a 2 day 2 night Startathon to empower and nurture entrepreneurs, makers and innovators to solve real-world problems and kick-start their journey into the community of innovative and sustainable businesses.</h5>
 
-                    <a href="https://jinshuju.net/f/aziAmv" class="btn btn-primary btn-lg " role="button" aria-disabled="true">Stay Updated Here!</a>
+                    <div class="section-team text-center">
+                        <h3 class="title">Registration will open soon.<br>Let us keep you updated!</h3>
+                        <form id="testForm">
+                            <div>
+                                <label>Name</label>
+                                <input type="text" name="form_field_1" placeholder="John Smith" />
+                            </div>
+
+                            <div>
+                                <label>Email</label>
+                                <input type="text" name="form_field_2" placeholder="example@email.com" />
+                            </div>
+                            <div>
+                                <button class="btn btn-primary" type="submit" id="submit-form">Submit</button>
+                            </div>
+
+                        </form>
+                    </div>
                 </div>
             </div>
             <div class="separator separator-primary"></div>
@@ -450,7 +470,6 @@
                 <br> &copy;
                 <script>
                     document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
-
                 </script>, Designed by
                 <a href="https://www.invisionapp.com" target="_blank">Invision</a>. Coded by
                 <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
@@ -471,7 +490,26 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
     <!-- Control Center for Now Ui Kit: parallax effects, scripts for the example pages etc -->
     <script src="./assets/js/now-ui-kit.js?v=1.2.0" type="text/javascript"></script>
-    </div>
+    <!-- bottom script -->
+    <script>
+        $(document).ready(function() {
+            var $form = $('#testForm'),
+                url = 'https://script.google.com/macros/s/AKfycbzT5E8Hnzq-h9W3kTWogWlBv6RaM8AYMDUgOx4aVV7eGrectzAF/exec'
+
+            $('#submit-form').on('click', function(e) {
+                e.preventDefault();
+                var jqxhr = $.ajax({
+                    url: url,
+                    method: "GET",
+                    dataType: "json",
+                    data: $form.serialize()
+                }).always(function(done) {
+                    window.alert("Form is successfully submitted! \nPlease whitelist the email contact@sustainable-sh.com to receive notice from us!\nStay tuned to our updates! :)");
+                });
+            })
+
+        })
+    </script>
 </body>
 
 </html>
