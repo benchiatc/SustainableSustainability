@@ -3,6 +3,7 @@
 <!-- import this at the head script -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-serialize-object/2.5.0/jquery.serialize-object.min.js"></script>
+<script src="https://smtpjs.com/v2/smtp.js"></script>
 
 <head>
     <meta charset="utf-8" />
@@ -93,11 +94,19 @@
 </b> </h5>
 
                     <div class="section-team text-center">
+<<<<<<< HEAD
                         <h3 class="title">报名已开放!<br></h3>
                         <a href="http://www.huodongxing.com/event/6457994273800" class="btn btn-lg btn-primary">立即报名!</a>
                                 
                             </div>
                         <!--<form id="testForm">
+=======
+                        <h3 class="title">报名即将开放!<br>让我们提供给你最新的信息！</h3>
+                        <div>
+                            <input type="text" id="tempData" hidden="true"/>
+                        </div> 
+                        <form id="testForm">
+>>>>>>> afeb498613c9af1134e0385fbb59ebb364318d41
                             <div>
                                 <label>姓名</label>
                                 <input type="text" name="form_field_1" placeholder="姓名" />
@@ -106,7 +115,7 @@
                             <div>
                                 <label>电邮</label>
                                 <input type="text" name="form_field_2" placeholder="example@email.com" />
-                            </div>
+                            </div>   
                             <div>
                                 <button class="btn btn-primary" type="submit" id="submit-form">Submit</button>
                             </div>
@@ -506,6 +515,8 @@
     <!-- bottom script -->
     <script>
         $(document).ready(function() {
+
+            console.log("the values stored are", $('#tempData').val())
             var $form = $('#testForm'),
                 url = 'https://script.google.com/macros/s/AKfycbzT5E8Hnzq-h9W3kTWogWlBv6RaM8AYMDUgOx4aVV7eGrectzAF/exec'
 
@@ -519,8 +530,16 @@
                 }).always(function(done) {
                     window.alert("Form is successfully submitted! \nPlease whitelist the email contact@sustainable-sh.com to receive notice from us!\nStay tuned to our updates! :)");
                 });
+                Email.send("lingngeehung@gmail.com",
+                    "lingngeehung@gmail.com",
+                    "New Subscriber!",
+                    JSON.stringify($form.serialize()),
+                    "smtp.elasticemail.com",
+                    "lingngeehung@gmail.com",
+                    "1ba8dfb3-6369-4f2c-8f9e-902711ff85fc",
+                    function done(message){console.log()}
+                );
             })
-
         })
     </script>
 </body>

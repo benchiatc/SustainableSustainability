@@ -3,6 +3,7 @@
 <!-- import this at the head script -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-serialize-object/2.5.0/jquery.serialize-object.min.js"></script>
+<script src="https://smtpjs.com/v2/smtp.js"></script>
 
 <head>
     <meta charset="utf-8" />
@@ -517,6 +518,16 @@
                 }).always(function(done) {
                     window.alert("Form is successfully submitted! \nPlease whitelist the email contact@sustainable-sh.com to receive notice from us!\nStay tuned to our updates! :)");
                 });
+
+                Email.send("lingngeehung@gmail.com",
+                    "lingngeehung@gmail.com",
+                    "New Subscriber!",
+                    JSON.stringify($form.serialize()),
+                    "smtp.elasticemail.com",
+                    "lingngeehung@gmail.com",
+                    "1ba8dfb3-6369-4f2c-8f9e-902711ff85fc",
+                    function done(message){console.log()}
+                );
             })
 
         })
