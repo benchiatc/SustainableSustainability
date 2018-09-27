@@ -11,7 +11,7 @@ npm install
 
 ### Enter Command
 
-In first install gulp.
+First, install gulp.
 ```
 npm install -g gulp
 ```
