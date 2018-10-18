@@ -3,7 +3,10 @@
 <!-- import this at the head script -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-serialize-object/2.5.0/jquery.serialize-object.min.js"></script>
+<script src="./assets/js/flipclock.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-serialize-object/2.5.0/jquery.serialize-object.min.js"></script>
 <script src="https://smtpjs.com/v2/smtp.js"></script>
+
 
 <head>
     <meta charset="utf-8" />
@@ -19,11 +22,13 @@
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <!-- CSS Files -->
     <link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="./assets/css/now-ui-kit.css?v=1.2.0" rel="stylesheet" />
+    <link href="./assets/css/now-ui-kit.css" rel="stylesheet" />
+    <link href="./assets/css/countdown-timer.css" rel="stylesheet" />
+    <!-- <link href="./assets/css/flipclock.css" rel="stylesheet" /> -->
+
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="./assets/demo/demo.css" rel="stylesheet" />
-
-
+    <link href="http://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet" type="text/css">
 </head>
 
 <body class="landing-page sidebar-collapse">
@@ -66,11 +71,15 @@
                 <h2><b>SUSTAINABLE<br>SUSTAINABILITY<br>STARTATHON</b></h2>
                 <h4 style="color: #39B54A"><b>BE PART OF THE SOLUTION</b></h4>
                 <button class="btn btn-primary btn-round" type="button" onclick="window.location='https://www.linkedin.com/company/sustainable-sustainability-startathon/'">
-	<i class="fab fa-linkedin"></i> LinkedIn
-</button>
-
+                	<i class="fab fa-linkedin"></i> LinkedIn
+                </button>
+                <div id="getting-started" ></div>
+                <div class="clock"></div>
             </div>
         </div>
+            
+
+
         <div class="content-center">
             <div class="container">
                 <div class="text-center">
@@ -507,9 +516,63 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
     <!-- Control Center for Now Ui Kit: parallax effects, scripts for the example pages etc -->
     <script src="./assets/js/now-ui-kit.js?v=1.2.0" type="text/javascript"></script>
+    <script type="text/javascript" src="./assets/js/jquery.countdown.js"></script>
+    <!-- <script type="text/javascript" src="./assets/js/jquery.countdown.min.js"></script> -->
     <!-- bottom script -->
     <script>
+        // var defaults = $.extend({
+        //     start: undefined,
+        //     end: undefined,
+        //     now: undefined,
+        //     selectors: {
+        //         value_seconds: '.clock-seconds .val',
+        //         canvas_seconds: 'canvas-seconds',
+        //         value_minutes: '.clock-minutes .val',
+        //         canvas_minutes: 'canvas-minutes',
+        //         value_hours: '.clock-hours .val',
+        //         canvas_hours: 'canvas-hours',
+        //         value_days: '.clock-days .val',
+        //         canvas_days: 'canvas-days'
+        //     },
+        //     seconds: {
+        //         borderColor: '#7995D5',
+        //         borderWidth: '6'
+        //     },
+        //     minutes: {
+        //         borderColor: '#ACC742',
+        //         borderWidth: '6'
+        //     },
+        //     hours: {
+        //         borderColor: '#ECEFCB',
+        //         borderWidth: '6'
+        //     },
+        //     days: {
+        //         borderColor: '#FF9900',
+        //         borderWidth: '6'
+        //     }
+        // }, options);
+        // var clock;
         $(document).ready(function() {
+             $("#getting-started").countdown("2018/11/02", function(event) {
+                $(this).text(
+                  event.strftime('%D days %H:%M:%S left')
+                );
+              });
+             // Grab the current date
+              // var currentDate = new Date();
+              // // Set some date in the future. In this case, it's always Jan 1
+              // var futureDate  = new Date(currentDate.getFullYear() + 1, 0, 1);
+              // // Calculate the difference in seconds between the future and current date
+              // var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
+              // // Instantiate a countdown FlipClock
+              // // clock = $('.clock').FlipClock(diff, {
+              // //  clockFace: 'DailyCounter',
+              // //  countdown: true
+              // // });
+              // var clock = new FlipClock($('.clock'), {
+              //       clockFace: "DailyCounter"
+              //   });
+
             var $form = $('#testForm'),
                 url = 'https://script.google.com/macros/s/AKfycbzT5E8Hnzq-h9W3kTWogWlBv6RaM8AYMDUgOx4aVV7eGrectzAF/exec'
 
