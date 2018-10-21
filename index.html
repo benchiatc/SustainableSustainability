@@ -6,7 +6,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-serialize-object/2.5.0/jquery.serialize-object.min.js"></script>
 <script src="https://smtpjs.com/v2/smtp.js"></script>
 
-
 <head>
     <meta charset="utf-8" />
     <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/logo-01.png">
@@ -506,8 +505,8 @@ rubbish chute collection companies, etc, in your idea)</b>
   </a>
             </div>-->
             <div class="hero-images-container-1">
-                            <img src="assets/img/formatSponsors.png" alt="">
-                        </div>
+                <img src="assets/img/formatSponsors.png" alt="">
+            </div>
         </div>
     </div>
     <div class="separator separator-primary">
@@ -556,41 +555,7 @@ rubbish chute collection companies, etc, in your idea)</b>
     <!-- Control Center for Now Ui Kit: parallax effects, scripts for the example pages etc -->
     <script src="./assets/js/now-ui-kit.js?v=1.2.0" type="text/javascript"></script>
     <script type="text/javascript" src="./assets/js/jquery.countdown.js"></script>
-    <!-- <script type="text/javascript" src="./assets/js/jquery.countdown.min.js"></script> -->
-    <!-- bottom script -->
     <script>
-        // var defaults = $.extend({
-        //     start: undefined,
-        //     end: undefined,
-        //     now: undefined,
-        //     selectors: {
-        //         value_seconds: '.clock-seconds .val',
-        //         canvas_seconds: 'canvas-seconds',
-        //         value_minutes: '.clock-minutes .val',
-        //         canvas_minutes: 'canvas-minutes',
-        //         value_hours: '.clock-hours .val',
-        //         canvas_hours: 'canvas-hours',
-        //         value_days: '.clock-days .val',
-        //         canvas_days: 'canvas-days'
-        //     },
-        //     seconds: {
-        //         borderColor: '#7995D5',
-        //         borderWidth: '6'
-        //     },
-        //     minutes: {
-        //         borderColor: '#ACC742',
-        //         borderWidth: '6'
-        //     },
-        //     hours: {
-        //         borderColor: '#ECEFCB',
-        //         borderWidth: '6'
-        //     },
-        //     days: {
-        //         borderColor: '#FF9900',
-        //         borderWidth: '6'
-        //     }
-        // }, options);
-        // var clock;
         $(document).ready(function() {
             $("#getting-started").countdown("2018/11/02", function(event) {
                 $(this).text(
@@ -611,6 +576,7 @@ rubbish chute collection companies, etc, in your idea)</b>
             // var clock = new FlipClock($('.clock'), {
             //       clockFace: "DailyCounter"
             //   });
+
             var $form = $('#testForm'),
                 url = 'https://script.google.com/macros/s/AKfycbzT5E8Hnzq-h9W3kTWogWlBv6RaM8AYMDUgOx4aVV7eGrectzAF/exec'
             $('#submit-form').on('click', function(e) {
@@ -639,14 +605,6 @@ rubbish chute collection companies, etc, in your idea)</b>
         var note = $('#note'),
         ts = new Date(2018, 10, 2),
         newYear = true;
-    
-        console.log("ts = ", ts)
-        // if((new Date()) > ts){
-        //     // The new year is here! Count towards something else.
-        //     // Notice the *1000 at the end - time must be in milliseconds
-        //     ts = (new Date()).getTime() + 10*24*60*60*1000;
-        //     newYear = false;
-        // }
             
         $('#countdown').countdown({
             timestamp   : ts,
@@ -671,7 +629,6 @@ rubbish chute collection companies, etc, in your idea)</b>
         });
     </script>
     <script src="assets/countdown/timer-jquery-countdown.js"></script>
-    <!-- <script src="assets/js/script.js"></script> -->
 </body>
 
 </html>
