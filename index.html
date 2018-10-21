@@ -3,7 +3,6 @@
 <!-- import this at the head script -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-serialize-object/2.5.0/jquery.serialize-object.min.js"></script>
-<script src="./assets/js/flipclock.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-serialize-object/2.5.0/jquery.serialize-object.min.js"></script>
 <script src="https://smtpjs.com/v2/smtp.js"></script>
 
@@ -20,11 +19,13 @@
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" />
     <!-- CSS Files -->
     <link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="./assets/css/now-ui-kit.css" rel="stylesheet" />
     <link href="./assets/css/countdown-timer.css" rel="stylesheet" />
-    <link href="./assets/css/jquery-timer.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/countdown/timer-jquery-countdown.css" />
     <!-- <link href="./assets/css/flipclock.css" rel="stylesheet" /> -->
 
     <!-- CSS Just for demo purpose, don't include it in your project -->
@@ -72,58 +73,35 @@
                 <h2><b>SUSTAINABLE<br>SUSTAINABILITY<br>STARTATHON</b></h2>
                 <h4 style="color: #39B54A"><b>BE PART OF THE SOLUTION</b></h4>
                 <button class="btn btn-primary btn-round" type="button" onclick="window.location='https://www.linkedin.com/company/sustainable-sustainability-startathon/'">
-                	<i class="fab fa-linkedin"></i> LinkedIn
+                    <i class="fab fa-linkedin"></i> LinkedIn
                 </button>
-                <div id="getting-started" ></div>
-                <!-- <div class="clock"></div> -->
-                <div id="countdown" class="countdownHolder">
-                    <span class="countDays">
-                        <span class="position">
-                            <span class="digit static"></span>
-                        </span>
-                        <span class="position">
-                            <span class="digit static"></span>
-                        </span>
-                    </span>
-
-                    <span class="countDiv countDiv0"></span>
-
-                    <span class="countHours">
-                        <span class="position">
-                            <span class="digit static"></span>
-                        </span>
-                        <span class="position">
-                            <span class="digit static"></span>
-                        </span>
-                    </span>
-
-                    <span class="countDiv countDiv1"></span>
-
-                    <span class="countMinutes">
-                        <span class="position">
-                            <span class="digit static"></span>
-                        </span>
-                        <span class="position">
-                            <span class="digit static"></span>
-                        </span>
-                    </span>
-
-                    <span class="countDiv countDiv2"></span>
-
-                    <span class="countSeconds">
-                        <span class="position">
-                            <span class="digit static"></span>
-                        </span>
-                        <span class="position">
-                            <span class="digit static"></span>
-                        </span>
-                    </span>
-
-                    <span class="countDiv countDiv3"></span>
+                <div>
+                    <div class="row" style="width:100%">
+                        <div class="col-lg-6 offset-lg-3">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <h5>Days</h5>
+                                </div>
+                                <div class="col-lg-3">
+                                    <h5>Hours</h5>
+                                </div>
+                                <div class="col-lg-3">
+                                    <h5>Minutes</h5>
+                                </div>
+                                <div class="col-lg-3">
+                                    <h5>Seconds</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <div id="getting-started"></div>
+                <!-- <div class="clock"></div> -->
+                <div id="countdown"></div>
+                <p id="note"></p>
             </div>
         </div>
-            
+
 
 
         <div class="content-center">
@@ -155,14 +133,12 @@
                     <h3 class="title">Registration is now OPEN!</h3>
                     <div>
                         <a href="http://www.huodongxing.com/event/6457994273800" class="btn btn-lg btn-primary">SIGN UP NOW</a>
-
                     </div>
                     <!--<form id="testForm">
                             <div>
                                 <label>Name</label>
                                 <input type="text" name="form_field_1" placeholder="John Smith" />
                             </div>
-
                             <div>
                                 <label>Email</label>
                                 <input type="text" name="form_field_2" placeholder="example@email.com" />
@@ -170,7 +146,6 @@
                             <div>
                                 <button class="btn btn-primary" type="submit" id="submit-form">Submit</button>
                             </div>
-
                         </form>-->
                 </div>
             </div>
@@ -182,7 +157,9 @@
 
                     <div class="col-md-12 ml-auto mr-auto text-center">
                         <h2 class="title">Problem Categories</h2>
-                        <h4 class="description">Problem statements will be released on 19th October 2018</h4>
+                        <h4 class="description">Problem statements are released!<br>
+                            Click below to download the Participants' Handbook!</h4>
+                        <a href="./assets/files/participants_handbook_en.pdf" class="btn btn-lg btn-primary">Participants' Handbook</a>
                     </div>
                     <div class="card col-md-6 col-sm-12 ml-auto mr-auto">
                         <img class="card-img-top" src="./assets/img/renewable_material.png" alt="Card image cap">
@@ -196,7 +173,11 @@
                             </p>
                             <div class="collapse" id="collapseAir">
                                 <div class="card card-body">
-                                    Coming soon on 19th October 2018!
+                                    RenewMaterial is a company that specializes in transforming waste straws into strong wood-like material. These RenewMaterial straw woods have the same, if not more advantages than conventional wood. As great as this material sounds, many consumers are still unaware of this material and continue to propel the timber industries, sometimes leading to unsustainable logging.With increasing adoption of straw wood in our daily lives, the impact of unsustainable logging can be reduced. <br><br>
+                                    <b>By making use of RenewMaterial, design an innovative product solution that leverages on its unique properties to encourage higher adoption of RenewMaterial.</b>
+                                    <br>
+                                    <br>
+                                    <a href="./assets/files/specsheet_renew.pdf"><b>Download RenewMaterial Specification Sheet.</b></a>
                                 </div>
                             </div>
                         </div>
@@ -215,7 +196,9 @@
                             </p>
                             <div class="collapse" id="collapseFood">
                                 <div class="card card-body">
-                                    Coming soon on 19th October 2018!
+                                    Management of food waste is a big problem in any country, be it in the urban or agricultural zones. Globally, ⅓ of the food produced worldwide for consumption is wasted. That is 1.3 billion tons. Under the umbrella of food waste, it has namely three categories: waste in production, waste in consumption and waste in storage (expired products). Output of food wastage can be better minimised through regulation of food generation, regulation in food consumption and food storage, and improving of current operational processes in businesses.
+                                    <br><br>
+                                    <b>With the materials provided, do come up with an innovative technology, product design and prototype or business model that will effectively reduce food wastage.</b>
                                 </div>
                             </div>
                         </div>
@@ -225,7 +208,7 @@
                         <div class="card col-md-6 col-sm-12 ml-auto mr-auto">
                             <img class="card-img-top" src="./assets/img/greenbuilding.jpg" alt="Card image cap">
                             <div class="card-body">
-                                <h5 class="card-title">Sustainable Building</h5>
+                                <h5 class="card-title">Healthy Building</h5>
                                 <p class="card-text">Green buildings are constructed with aim to reduce the overall impact of the building on human health and the natural environment by either efficiently using energy, water, and other resources and hence reducing waste, pollution and environmental degradation.</p>
                                 <p>
 
@@ -234,7 +217,9 @@
                                 </p>
                                 <div class="collapse" id="collapseEnergy">
                                     <div class="card card-body">
-                                        Coming soon on 19th October 2018!
+                                        Increasingly, there is a shift in focus towards making buildings smarter and more sustainable, with innovation in either architecture, technology or even simple tenancy arrangement. A sustainable building design will allow a more efficient use of electricity and energy, cleaner and healthier air quality, and a better control of water usage amongst tenants and building owners. It is the perfect example of how saving the environment can go hand-in-hand with cost savings and profit making. However, in terms of technological development, much more can be done to introduce new methods/technology/ innovations to make buildings more sustainable.
+                                        <br><br>
+                                        <b>Using the materials provided for smart buildings, come up with an innovative product design and prototype or business model that effectively demonstrates the goals of sustainable sustainability.</b>
                                     </div>
                                 </div>
                             </div>
@@ -253,7 +238,12 @@
                                 </p>
                                 <div class="collapse" id="collapsePlastic">
                                     <div class="card card-body">
-                                        Coming soon on 19th October 2018!
+                                        Plastic have slowly become an essential tool for many all around the world. However, the disposal of plastic bags often carries along many environmental issues. One of the major contributor to environmental unfriendliness is Single-use plastics, also referred to as disposable plastics, used for plastic packaging and include items intended to be used only once before they are thrown away or recycled. Plastic disposal can also be better managed, from the point of disposal, segregation of plastic type and ultimately to the management of waste (of burning or recycling or others). Responsibilities lies with all of us, from the top levels to the grassroots.
+                                        <br><br>
+                                        <b>With the resources and materials given, come up with an
+innovative product design or prototype. (Optional: consider
+working with the various stakeholders, i.e. government,
+rubbish chute collection companies, etc, in your idea)</b>
                                     </div>
                                 </div>
 
@@ -456,7 +446,7 @@
         <div class="row">
             <div class="col-md-12 ml-auto mr-auto text-center">
                 <h2 class="title">Made Possible By</h2>
-            </div>
+            </div><!--
             <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="3000">
                 <ol class="carousel-indicators">
                     <li data-target="#carousel" data-slide-to="0" class="active"></li>
@@ -514,7 +504,10 @@
                 <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
     <i class="now-ui-icons arrows-1_minimal-right"></i>
   </a>
-            </div>
+            </div>-->
+            <div class="hero-images-container-1">
+                            <img src="assets/img/formatSponsors.png" alt="">
+                        </div>
         </div>
     </div>
     <div class="separator separator-primary">
@@ -562,8 +555,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
     <!-- Control Center for Now Ui Kit: parallax effects, scripts for the example pages etc -->
     <script src="./assets/js/now-ui-kit.js?v=1.2.0" type="text/javascript"></script>
-    <!-- <script type="text/javascript" src="./assets/js/jquery.countdown.js"></script> -->
-    <script type="text/javascript" src="./assets/js/jquery-timer.js"></script>
+    <script type="text/javascript" src="./assets/js/jquery.countdown.js"></script>
     <!-- <script type="text/javascript" src="./assets/js/jquery.countdown.min.js"></script> -->
     <!-- bottom script -->
     <script>
@@ -600,61 +592,27 @@
         // }, options);
         // var clock;
         $(document).ready(function() {
-             // $("#getting-started").countdown("2018/11/02", function(event) {
-             //    $(this).text(
-             //      event.strftime('%D days %H:%M:%S left')
-             //    );
-             //  });
-             // Grab the current date
-              // var currentDate = new Date();
-              // // Set some date in the future. In this case, it's always Jan 1
-              // var futureDate  = new Date(currentDate.getFullYear() + 1, 0, 1);
-              // // Calculate the difference in seconds between the future and current date
-              // var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
-              // // Instantiate a countdown FlipClock
-              // // clock = $('.clock').FlipClock(diff, {
-              // //  clockFace: 'DailyCounter',
-              // //  countdown: true
-              // // });
-              // var clock = new FlipClock($('.clock'), {
-              //       clockFace: "DailyCounter"
-              //   });
-
-             var note = $('#note'),
-            ts = new Date(2012, 0, 1),
-            newYear = true;
-
-            if((new Date()) > ts){
-                // The new year is here! Count towards something else.
-                // Notice the *1000 at the end - time must be in milliseconds
-                ts = (new Date()).getTime() + 10*24*60*60*1000;
-                newYear = false;
-            }
-
-            $('#countdown').countdown({
-                timestamp   : ts,
-                callback    : function(days, hours, minutes, seconds){
-
-                    var message = "";
-
-                    message += days + " day" + ( days==1 ? '':'s' ) + ", ";
-                    message += hours + " hour" + ( hours==1 ? '':'s' ) + ", ";
-                    message += minutes + " minute" + ( minutes==1 ? '':'s' ) + " and ";
-                    message += seconds + " second" + ( seconds==1 ? '':'s' ) + " <br />";
-
-                    if(newYear){
-                        message += "left until the new year!";
-                    }
-                    else {
-                        message += "left to 10 days from now!";
-                    }
-
-                    note.html(message);
-                }
-            }); 
+            $("#getting-started").countdown("2018/11/02", function(event) {
+                $(this).text(
+                    event.strftime('%D days %H:%M:%S left')
+                );
+            });
+            // Grab the current date
+            // var currentDate = new Date();
+            // // Set some date in the future. In this case, it's always Jan 1
+            // var futureDate  = new Date(currentDate.getFullYear() + 1, 0, 1);
+            // // Calculate the difference in seconds between the future and current date
+            // var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
+            // // Instantiate a countdown FlipClock
+            // // clock = $('.clock').FlipClock(diff, {
+            // //  clockFace: 'DailyCounter',
+            // //  countdown: true
+            // // });
+            // var clock = new FlipClock($('.clock'), {
+            //       clockFace: "DailyCounter"
+            //   });
             var $form = $('#testForm'),
                 url = 'https://script.google.com/macros/s/AKfycbzT5E8Hnzq-h9W3kTWogWlBv6RaM8AYMDUgOx4aVV7eGrectzAF/exec'
-
             $('#submit-form').on('click', function(e) {
                 e.preventDefault();
                 var jqxhr = $.ajax({
@@ -665,7 +623,6 @@
                 }).always(function(done) {
                     window.alert("Form is successfully submitted! \nPlease whitelist the email contact@sustainable-sh.com to receive notice from us!\nStay tuned to our updates! :)");
                 });
-
                 Email.send("lingngeehung@gmail.com",
                     "lingngeehung@gmail.com",
                     "New Subscriber!",
@@ -678,9 +635,43 @@
                     }
                 );
             })
-
         })
+        var note = $('#note'),
+        ts = new Date(2018, 10, 2),
+        newYear = true;
+    
+        console.log("ts = ", ts)
+        // if((new Date()) > ts){
+        //     // The new year is here! Count towards something else.
+        //     // Notice the *1000 at the end - time must be in milliseconds
+        //     ts = (new Date()).getTime() + 10*24*60*60*1000;
+        //     newYear = false;
+        // }
+            
+        $('#countdown').countdown({
+            timestamp   : ts,
+            callback    : function(days, hours, minutes, seconds){
+                
+                var message = "";
+                
+                message += days + " day" + ( days==1 ? '':'s' ) + ", ";
+                message += hours + " hour" + ( hours==1 ? '':'s' ) + ", ";
+                message += minutes + " minute" + ( minutes==1 ? '':'s' ) + " and ";
+                message += seconds + " second" + ( seconds==1 ? '':'s' ) + " <br />";
+                
+                if(newYear){
+                    message += "left until the new year!";
+                }
+                else {
+                    message += "left to 10 days from now!";
+                }
+                console.log("the message is ", message)
+                note.html(message);
+            }
+        });
     </script>
+    <script src="assets/countdown/timer-jquery-countdown.js"></script>
+    <!-- <script src="assets/js/script.js"></script> -->
 </body>
 
 </html>
