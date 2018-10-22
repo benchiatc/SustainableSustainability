@@ -31,7 +31,7 @@
 		(function tick(){
 
 			// Time left
-			left = Math.floor((new Date(2018,10,2) - (new Date()) ) / 1000);
+			left = Math.floor((new Date(2018,10,2, 19,30) - (new Date()) ) / 1000);
 			console.log("options", options.timestamp)
 			console.log("options", new Date())
 			if(left < 0){
